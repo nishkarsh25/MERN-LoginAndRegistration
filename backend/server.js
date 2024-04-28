@@ -48,3 +48,6 @@ app.post('/login',async(req,res)=>{
 
 connectDB();
 
+app.listen(port,()=> {
+ console.log('Server is listening on Post 8000')
+});
