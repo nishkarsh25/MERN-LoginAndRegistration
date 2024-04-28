@@ -70,7 +70,7 @@ const RegistrationPage = () => {
                     {message && <p className="text-red-500">{message}</p>}
                 </form>
                 <div className="text-center mt-4">
-                    <p className="text-gray-700">Already have an account? <Link to="/login" className="font-semibold text-indigo-600 hover:text-indigo-800">Sign in</Link></p>
+                    <p className="text-gray-700">Already have an account? <Link to="/" className="font-semibold text-indigo-600 hover:text-indigo-800">Sign in</Link></p>
                 </div>
             </div>
         </div>
