@@ -10,6 +10,15 @@ const RegistrationPage = () => {
 
     const [message, setMessage] = useState('');
 
+    const handleRegistrationChange = (e) => {
+        const { name, value } = e.target;
+
+        setRegistrationData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
     
 };
 
