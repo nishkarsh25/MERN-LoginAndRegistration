@@ -26,6 +26,14 @@ const LoginPage = () => {
     });
   };
 
+  const handleLoginChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   
 };
 
