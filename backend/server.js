@@ -5,3 +5,6 @@ const connectDB = require('./db/dbConnection');
 const User = require('./db/user');
 const cors = require('cors');
 
+//Middleware for parsing JSON
+app.use(express.json());
+
