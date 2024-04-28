@@ -9,6 +9,23 @@ const LoginPage = () => {
   });
   const [loginMessage, setLoginMessage] = useState('');
 
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:8000/login', loginData);
+      const { message } = response.data;
+      setLoginMessage(message);
+    } catch (error) {
+      console.error('Login error', error);
+      setLoginMessage('Login Unsuccessful');
+    }
+    setLoginData({
+      username: '',
+      password: '',
+    });
+  };
+
   
 };
 
