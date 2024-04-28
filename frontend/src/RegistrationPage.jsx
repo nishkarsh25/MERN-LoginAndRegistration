@@ -19,6 +19,21 @@ const RegistrationPage = () => {
         }));
     };
 
+    const handleRegistrationSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:8000/register', registrationData);
+            setMessage(response.data.message);
+        } catch (error) {
+            console.log(error);
+            setMessage(`Username Already Exists: ${error.message}`);
+        }
+        setRegistrationData({
+            username: '',
+            password: '',
+        });
+    };
+
     
 };
 
