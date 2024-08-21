@@ -1,28 +1,31 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   });
-  const [loginMessage, setLoginMessage] = useState('');
+  const [loginMessage, setLoginMessage] = useState("");
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/login', loginData);
+      const response = await axios.post(
+        "https://mern-loginandregistration-1.onrender.com/login",
+        loginData
+      );
       const { message } = response.data;
       setLoginMessage(message);
     } catch (error) {
-      console.error('Login error', error);
-      setLoginMessage('Login Unsuccessful');
+      console.error("Login error", error);
+      setLoginMessage("Login Unsuccessful");
     }
     setLoginData({
-      username: '',
-      password: '',
+      username: "",
+      password: "",
     });
   };
 
@@ -63,10 +66,12 @@ const LoginPage = () => {
           >
             Login
           </button>
-          {loginMessage && <p className="mt-4 text-center text-red-500">{loginMessage}</p>}
+          {loginMessage && (
+            <p className="mt-4 text-center text-red-500">{loginMessage}</p>
+          )}
         </form>
         <p className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account?{' '}
+          Don't have an account?{" "}
           <Link
             to="/registration"
             className="font-semibold text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out"
