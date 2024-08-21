@@ -14,7 +14,7 @@ This project serves as a robust template for building full-stack web application
 
 ## Live Demo
 
-You can try out the live demo of the app [here](https://glittery-nougat-31ee8a.netlify.app/).
+You can try out the live demo of the app [here](https://mern-loginandregistration-1.onrender.com).
 
 ## Folder Structure
 
